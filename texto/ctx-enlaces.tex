@@ -1,0 +1,172 @@
+\startcomponent ctx-enlaces
+\product ppchtextut
+
+
+\startchapter[title={Enlaces}]
+
+  \startsection[title=Enlaces sencillos y dobles]
+    
+    Empezaremos con ejemplos en los que \type{S} significa enlace sencillo y
+    \type{D} enlace doble.
+
+    En nuestro primer ejemplo representaremos cuatro plantillas en los que
+    se representan enlaces sencillos y dobles, tanto en el anillo, como en
+    los radicales. De paso, iremos recordando conceptos estudiados en el capítulo
+    anterior:
+    
+    % El comando comentado numera la fórmula para poderla referenciar más tarde
+    %\placeformula
+    \startformula
+      \startlinealignment[n=4, number=no, align={middle,middle,middle,middle}]
+        % Columna 1: Estructura 1
+        \NC
+        \startchemical[frame=off,left=1800,width=3600,top=1900,bottom=2200]
+          \chemical[SIX,B,+SR]
+          \bottext{[SIX,B,+SR]}
+        \stopchemical
+        % Columna 2: Estructura 2
+        \NC
+     \startchemical[frame=off,left=1800,width=3600,top=1900,bottom=2200]          
+          \chemical[SIX,SB,SR]
+          \bottext{[SIX,SB,SR]}
+        \stopchemical
+        % Columna 5: Estructura 3
+        \NC
+     \startchemical[frame=off,left=2500,width=5000,top=1900,bottom=2200]          
+          \chemical[SIX,SB135,DB246,SR]
+          \bottext{[SIX,SB135,DB246,SR]}
+        \stopchemical
+        \NC
+     \startchemical[frame=off,left=2500,width=5000,top=1900,bottom=2200]          
+          \chemical[SIX,SB1356,DB24,DR6,SR1..5]
+          \bottext{[SIX,SB1356,DB24,DR6,SR1..5]}
+        \stopchemical
+        \NR
+      \stoplinealignment 
+    \stopformula
+
+    \startitemize[n, packed, joinedup]
+    \item El ejemplo de la izquierda muestra una estructura hexagonal [\type{SIX}],
+      con todos los enlaces de vértice a vértice [\type{B}]. Los radicales son
+      enlaces sencillos que salen de los vértices y están acortados [\type{+SR}],
+      ---recordemos que es el signo (\type{+}) el que acorta el radical al final---.
+      Por último, al final de los radicales acortados situamos los \emph{átomos},
+      con [\type{RZ}], en este caso números, para recordar la numeración en esta
+      estructura. Todos los enlaces son sencillos.
+    \item En el siguiente ejemplo seguimos con enlaces sencillos, pero ahora dejamos
+      espacio, tanto para los átomos al final de los radicales, como para los átomos
+      en los vértices de la estructura, con [\type{SR}], lo que acorta tanto el
+      principio como el final del radical.
+    \item En el tercer ejemplo nos aparecen enlaces dobles [\type{DB246}] entre los
+      átomos 23, 45 y 61, debido a la numeración 246 que acompaña.
+    \stopitemize
+
+    De los tres ejemplos, infiero que [\type{SR}] dibuja radicales como enlaces
+    simples entre átomos de la estructura y los que se unen a ellos, {\bf dejando
+      espacio para la representación de los átomos}. De la misma forma,
+    [\type{DB}] hace los mismo, {\bf pero ahora los enlaces son dobles}.
+    Se ve claramente que (\type{S}) significa enlace sencillo y (\type{D}) es
+    enlace doble.
+
+
+    \startchemical[frame=off,left=2500,width=5000,top=1900,bottom=2500]
+      \chemical[SIX,+DB246,+SB135,+DR,RZ][1,2,3,4,5,6]
+      \bottext{[SIX,B,+DR,RZ] [1..6]}
+    \stopchemical
+
+    
+  \stopsection
+
+  
+  \startsection[title=Enlaces sencillos orientados en el espacio]
+    Empezaremos con enlaces sencillos pero que indican una orientación en el
+    espacio cuando interesa esta.
+
+    El siguiente ejemplo sirve como modelo utilizando la estructura [\type{ONE}].
+
+    \startformula
+      \startlinealignment[n=2, align={middle,middle}]
+        % Columna 1: Estructura 1
+        \NC
+        \startchemical[frame=off, left=4000,width=8000,bottom=1600]
+          \chemical[ONE,Z0,BB2,SD1,SR47,RZ1247][C,H,H,H,H]
+          \bottext{[ONE,Z0,BB2,SD1,SR47,RZ1247][C,H,H,H,H]}
+        \stopchemical
+        % Columna 2: Estructura 2
+        \NC
+        \startchemical[frame=off, left=4000,width=8000,bottom=1600]
+          \chemical[ONE,Z0=C,BB2,BD1,SR47,RZ1247][H,H,H,H]
+          \bottext{\tfc[ONE,Z0=C,BB2,BD1,SR47,RZ1247][H,H,H,H]}
+        \stopchemical
+        \NR
+      \stoplinealignment
+    \stopformula
+
+    \startitemize[n,packed,joinedup]
+    \item En el primer ejemplo vemos una forma de representar espacialment la
+      molécula de metano. Recordemos que [\type{Z0}] representa al átomo
+      central, que se puede situar tanto en la lista de átomos como acompañando a
+      \type{Z0}. En el código de la izquierda se sitúa en la lista de átomos, en
+      cuyo caso debe estar obligatoriamente en primer lugar; en nuestro ejemplo es el
+      átomo de carbono.
+      Se especifican cuatro radicales como enlaces sencillos.
+      Utilizaremos tres tipos diferentes para indicar la orientación espacial.
+      Todos se acortan al principio y al final para dejar espacio a los átomos que
+      se enlazan:
+      \startitemize[packed,joinedup]
+      \item Los enlaces normales que se supone que están en el plano del papel
+        se reprentan como enlaces simples normales con [\type{SR}].
+      \item El enlace sencillo, en negrita, que sale hacia nosotros (hacia fuera de
+        la imagen), se representa mediante el código [\type{BB}].
+      \item El enlace sencillo en trazos discontinuos que se esconde dentro de la
+        imagen, alejándose de nosotros, se representa mediante el código [\type{SD}].
+      \stopitemize      
+
+      Por último, el código \type{ZR} sirve para indicar la orientación de los átomos
+      que se unen, y sus posiciones deben relacionarse con la de los enlaces.
+      La numeración debe ser 1, 2, 4 y 7, que la relacionamos con los puntos
+      cardinales:
+      \startitemize[packed,joinedup]
+      \item {\bf 1}: Es el enlace y/o átomo que se encuentra a la derecha
+        (\type{E}, \quotation{este}).
+      \item {\bf 2}: El que le sigue en sentido horario
+        (\type{SE}, \quotation{sureste}).
+      \item {\bf 4}: El que seguiría al 3 (\type{SO}, \quotation{suroeste}).
+      \item {\bf 7}: El que se encuentra arriba (\type{N}, \quotation{N}).
+      \stopitemize
+    \item En el segundo ejemplo encontramos dos cambios:
+      \startitemize[packed,joinedup]
+      \item Hemos sacado el carbono de la lista de átomos, asociándolo directamente a
+        [\type{Z0}], mediante el código [\type{Z0=C}], lo que parece más intuitivo.
+      \item Por otro lado, el enlace sencillo que se aleja de nosotros hacia
+        dentro del papel se representa, también de manera más intuitiva como
+        [\type{BD}].
+      \stopitemize
+    \stopitemize
+
+%    \startchemical
+%      \chemical[SIX,B,ZN] [C,C,C,C,C,C]
+%    \stopchemical
+%
+%    \startchemical
+%      \chemical[SIX,B,ZT] [1,2,3,4,5,6]
+%    \stopchemical
+
+    
+  \stopsection
+  
+      
+    \stopchapter
+  \stopcomponent
+
+
+
+  
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "../ctx-ppchtextut.tex"
+%%% End:

@@ -1,0 +1,194 @@
+\startcomponent ctx-comandosbasicos
+\product ppchtextut
+
+
+\startchapter[title={Comando básicos}]
+
+  Empezaremos explicando cómo se utiliza el comando principal para la
+  gestión de listas, junto con los argumentos más comunes que modifican
+  la salida que producen.
+  
+  \startsection[title=Comando \color[red]{\type{\chemical}}]
+    
+    En ConTeXt \MKXL\ ---que es lo mismo que \LUAMETATEX\ ---, el paquete
+    \PPCHTEX\ está integrado de forma nativa y el comando más básico es
+    \type{\chemical} para escribir reacciones químicas, estructuras y fórmulas
+    moleculares.
+
+    Este comando es el componente central del módulo de química \PPCHTEX\ en
+    \CONTEXT\, que se usa para representar fórmulas y estructuras químicas.
+    Permite la creación de diagramas moleculares complejos, incluyendo anillos y
+    enlaces, definiendo enlaces químicos y estructuras atómicas en el entorno
+    \type{\startchemical ... \stopchemical}
+
+    La estructura del comando es \type{\chemical[bonds][atoms/molecules]}, donde el
+    primer argumento \type{bonds} especifica los enlaces que se dibujarán, por
+    ejemplo, \type{SIX} dibuja un anillo de seis enlaces. El segundo argumento
+    especifica los átomos que aparecerán, siempre en modo matemático.
+
+    \startsubsection[title=Fórmulas sencillas en modo examen]
+
+      Empezaremos con ejemplos de fórmulas sencillas. Para escribirlas, se pueden
+      declarar los subíndices mediante el símbolo \emph{subrayado} del teclado
+      \type{_}, o bien mediante \type{\low{subíndice}}.
+      Para los superíndices, se puede utilizar el \emph{acento circunflejo}
+      \type{^}, o bien \type{\high{superíndice}}.
+      
+      Veamos algunos ejemplos cuando interesa que unas fórmulas sencillas aparezcan
+      en un examen:
+      \startitemize[n,packed,joinedup]
+      \item Nombra las siguientes especies químicas:
+        \startitemize[a, horizontal, five]
+          \startitem \chemical{HSO\low{4}\high{-}} \stopitem
+          \startitem \chemical{N\low{2}O\low{5}} \stopitem
+          \startitem \chemical{CH\low{4}} \stopitem
+          \startitem \chemical{Al(CO\low{3})\low{3}} \stopitem
+          \startitem \chemical{S\high{2-}} \stopitem
+          \startitem \chemical{NH\low{4}NO\low{3}} \stopitem
+          \startitem \chemical{C\low{6}H\low{12}O\low{6}} \stopitem
+          \startitem \chemical{H\high{-}} \stopitem
+          \startitem \chemical{ClO\low{3}\high{-}} \stopitem       
+          \startitem \chemical{CH\low{3}-CH\low{2}OH} \stopitem
+        \stopitemize
+      \item Formula las siguientes especies químicas:
+        \startitemize[a, horizontal, two]
+          \startitem hidrógenocarbonato de cobalto(II) \stopitem
+          \startitem ozono \stopitem
+          \startitem benceno \stopitem
+          \startitem cloruro de amonio \stopitem  
+          \startitem hidrógenofosfato de cadmio \stopitem
+          \startitem 1,2-hexadieno \stopitem
+          \startitem acetona \stopitem
+          \startitem borato de sodio \stopitem
+          \startitem ácido sulfhídrico \stopitem
+          \startitem nitrógeno \stopitem
+        \stopitemize
+    \item Nombra las siguientes especies químicas
+      \startMycolumns
+        \startitemize[a, horizontal, five]
+          \startitem \chemical{CO_2} \stopitem
+          \startitem \chemical{H_2O} \stopitem
+          \startitem \chemical{Cl_2O_7} \stopitem
+          \startitem \chemical{Fe_2(SO4)_3} \stopitem
+          \startitem \chemical{CH_3-CO-CH_3} \stopitem
+          \startitem \chemical{CH_2=CH_2} \stopitem
+          \startitem \chemical{HClO_4} \stopitem
+          \startitem \chemical{HS^-} \stopitem
+          \startitem \chemical{Na_3PO_4} \stopitem
+          \startitem \chemical{CH_3NH_2} \stopitem
+        \stopitemize
+      \stopMycolumns    
+    \stopitemize
+
+    \startsubsection[title=Comandos
+      \color[red]{\type{\startchemical ... \stopchemical}}]
+      
+      Este par de comandos se utiliza para dibujar fórmulas más complejas; incluso
+      se puede utilizar en su interior múltiples veces el comando \type{\chemical}
+      para escribir estructuras mucho más complejas. El siguiente capítulo
+      tratará de este tipo de estructuras.
+      Por ejemplo, podemos escribir el fenol y el etanol
+      \startalignment[center]
+      \bTABLE[frame=off, offset=2em, align=center]
+      \bTR
+      \bTD
+      \startchemical[scale=small]
+        \chemical [SIX,B,C,+SR6,RZ6][OH]
+      \stopchemical
+      \eTD
+      \bTD
+      \startchemical[scale=small]
+        \chemical [ONE,Z0357,SB1357,MOV1,Z037,SB137,MOV1,Z01,SB1]
+                  [C,H,H,H,C,H,H,O,H]
+      \stopchemical  
+      \eTD
+      \eTR
+      \eTABLE
+      \stopalignment
+
+  \stopsection
+
+  \startsection[title=\color[red]{\type{\setupchemical}}]
+    Ahora presentaremos el comando \type{\setupchemical} dejando de lado el resto
+    de parámetros. Con éste podemos influir en la presentación de las fórmulas, a
+    menos que en alguna fórmula concreta se especifique otra cosa, como veremos
+    en el siguiente párrafo.
+    Este comando influye en todas las fórmulas y conviene situarla aparte, por
+    ejemplo, en el fichero de entorno general
+    % --------------------------------------------------------------------------
+    % 1,2,3,4,5,6-hexamentilciclohexano
+    % ---------------------------------------------------------------------------
+    % Definición de búfer para imagen
+    \startbuffer[molecula]
+      \setupchemical[axis=on,frame=on,width=5000]
+      \startchemical
+        \chemical[SIX,B,+SR]
+      \stopchemical
+    \stopbuffer
+    % Definición de búfer para código fuente
+    \startbuffer[moleculatxt]
+      \setupchemical[axis=on,frame=on,width=5000]
+      ...
+      \startchemical
+        \chemical[SIX,B,+SR]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Estructura para poner la imagen a la izda. y el código fuente a la dcha.
+    % Aquí se utiliza \startlinealignment y \frame
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 1.0em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+
+    Para que no influya este comando, el argumento del comando se puede añadir
+    a \type{\startchemical} de una fórmula concreta, de manera que solo influirá a
+    esa fórmula \blank[1ex]
+    % --------------------------------------------------------------------------
+    % 1,2,3,4,5,6-hexamentilciclohexano
+    % ---------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[axis=on,frame=on,width=5000]
+        \chemical[SIX,B,+SR,RZ]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical[axis=on,frame=on,width=5000]
+        \chemical[SIX,B,+SR,-SR,RZ]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Segunda forma de alinear imagen y código fuente.
+    % Aquí se utiliza \setlinealignment y xtable
+    \startlinealignment[left] 
+    \startembeddedxtable[frame=off, offset=0em, align={right,lohi}]
+      \startxrow
+        \startxcell
+          \getbuffer[molecula]
+        \stopxcell
+        \startxcell[offset=0.5em]
+          {\switchtobodyfont[8pt]\typebuffer[moleculatxt]}
+        \stopxcell
+          \stopxrow
+        \stopembeddedxtable
+      \stoplinealignment
+    % --------------------------------------------------------------------------
+
+  
+\stopchapter
+\stopcomponent
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "../ctx-ppchtextut.tex"
+%%% End:

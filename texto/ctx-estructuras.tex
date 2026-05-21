@@ -1,0 +1,1063 @@
+\startcomponent ctx-estructuras
+\product ppchtextut
+
+
+\startchapter[title={Estructuras}]
+  
+  Vamos a familiarizarnos con algunas estructuras químicas.
+
+  % ##############################################################################
+  \startsection[title={Hexagonal}]
+    Para empezar, utilizaremos aquí la estructura \type{SIX}, que utiliza como base
+    un grupo de seis átomos formando un hexágono regular. Cada átomo está asociado
+    a un número.
+  
+    En la siguiente imagen se aprecia la numeración de cada átomo del hexágono
+    asociado a la estructura \type{SIX}
+  
+    % --------------------------------------------------------------------------
+    % SIX
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1800]
+        \bottext{SIX}
+        \chemical[SIX,SB,Z][1,2,3,4,5,6]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{SIX}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[SIX,SB,Z][1,2,3,4,5,6]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+    A continuación, explicamos por encima el significado del código fuente utilizado
+    para representar la figura anterior. Vemos que al comando \type{chemical}
+    se le añaden dos grupos de argumentos.
+    \startitemize[packed]
+    \item El primer grupo contiene \type{SB} (\emph{single bonds}):
+      \startitemize[packed]
+      \item \type{SIX} organiza una estructura hexagonal.
+      \item \type{SB} dibuja los enlaces (\type{B}) sencillos (\type{S})
+        \emph{dejando espacio para dibujar los átomos} que se encuentran en los
+        vértices de la estructura, que en este caso hemos aprovecado para poner
+        el número que le corresponde ºa cada vértice. Si se hubiera puesto solo
+        \type{B}, los enlaces unirían los vértices, no dejando que se vieran los
+        átomos situados en los vértices.
+      \stopitemize
+    \item El segundo grupo contiene los átomos que se sitúan en la estructura
+      hexagonal que, como hemos dicho son los números que les corresponden,
+      aunque podrían ser \chemical{C} o cualquier otro átomo que interese.
+    \item El comando \type{\bottext} escribe en este caso \type{SIX} debajo de
+      la fórmula (para ello, hemos aumentado el comando bottom en
+      \type{\startchemical} para dejar el espacio apropiado).
+    \stopitemize
+    % ****************************************************************************
+    \startsubsection[title={Fórmula esquemática del ciclohexano}]
+      
+      En el primer ejemplo veremos la fórmula esquemática del ciclohexano, donde las
+      líneas representan los seis enlaces \type{C-C}, los vértices representan los
+      átomos de carbono y los hidrógenos no aparecen.
+      
+      Vemos que al comando \type{\chemical} se le añaden inmediatamente un grupo de
+      argumentos, que son \type{[SIX,B]}. La opción \type{SIX} utiliza la estructura
+      formada por seis átomos formando un hexágono regular. La otra opción \type{B},
+      dibuja todos los enlaces entre átomos contiguos, de vértice a vértice,
+      \emph{sin dejar espacio a los átomos de la estructura}\/.
+      
+      En cuanto al comando \type{\startchemical},  opción \type{top=1200} sube (o
+      baja) el límite superior del marco \type{frame=on} un cierto espacio en
+      blanco; por otro lado, \type{bottom=1200} baja el límite inferior del marco,
+      dejando un cierto espacio en blanco. En el resto de imágnes obviaremos el
+      argumento \type{frame=on} en la sección derecha (texto), para que no se
+      alargue el comando, aunque, cuando la fórmula aparezca recuadrada, el comando
+      \type{frame=on} debe añadirse
+    
+      % --------------------------------------------------------------------------
+      % Ciclohexano (fórmula esquemática)
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+          \bottext{ciclohexano}
+          \chemical[SIX,B]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{ciclohexano}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[SIX,B]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      % ---------------------------------------------------------------------------
+    \stopsubsection
+    
+    % ***************************************************************************
+    \startsubsection[title={Fórmula esquemática del butano}]
+    
+      Se podrían dibujar menos enlaces en esa estructura básica hexagonal.
+      Por ejemplo, el butano
+  
+      % --------------------------------------------------------------------------
+      % Butano (fórmula esquemática 1)
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,left=1800,width=4000,top=1000,bottom=1500]
+          \bottext{butano}
+          \chemical[SIX,B612]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{butano}
+          \setupchemical[left=1800,width=4000,top=1000,bottom=1500]
+          \chemical[SIX,B612]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      % ---------------------------------------------------------------------------
+  
+      Cada número que se le pasa a la opción \type{B} (enlaces) indica que se
+      debe dibujar un enlace (de vértice a vértice) empezando por el número que
+      se indica, hasta el siguiente átomo en la numeración. Así, en esta fórmula,
+      \type{B612} indica que se dibujen los enlaces, del 6 al 1,  del 1 al 2 y, por
+      último, del 2 al 3. Nótese que se podrían haber especificado los números en
+      otro orden, por ejemplo \type{B261}.
+
+      % --------------------------------------------------------------------------
+      % Butano (fórmula esquemática 2)
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,left=1800,width=4000,top=1300,bottom=600]
+          \bottext{butano}
+          \chemical[SIX,B56,R1]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{butano}
+          \setupchemical[left=1800,width=4000,top=1000,bottom=1500]
+          \chemical[SIX,B612]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      % ---------------------------------------------------------------------------
+      
+    \stopsubsection
+  
+    % ****************************************************************************
+    \startsubsection[title={Fórmula esquemática del metilciclohexano}]
+
+      En esta fórmula añadimos la opción \type{+SR1}, que dibuja un radical acortado
+      al final, es decir, sale del vértice 1 y llega al final acortado, bien porque
+      se quiera así, o porque al final del mismo queramos escribir un átomo que,
+      en caso contrario sería tachado por el radical. También podríamos haber
+      obtenido el mismo efecto poniendo \type{+R1}, pero en el manual prefieren
+      ponerlo como \type{+SR1}.
+    
+      % --------------------------------------------------------------------------
+      % Metilciclohexano (fórmula esquemática)
+      % ---------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4200,left=1900,top=1200,bottom=1500]
+          \bottext{metilciclohexano}
+          \chemical[SIX,B,+SR1]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{metilciclohexano}
+          \setupchemical[width=4200,left=1900,top=1200,bottom=1500]
+          \chemical[SIX,B,+SR1]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      % ---------------------------------------------------------------------------
+    
+      Conviene tener en cuenta las siguientes opciones:
+      \startitemize[packed,joinedup]
+      \item \[\type{R}]: Radical sencillo largo (sale del vértice).
+        No se acorta ni al principio ni al final. Se utiliza cuando nos interesa
+        esa longitud. No se debe añadir ningún átomo al final porque quedaría
+        tapado.
+      \item \[\type{+SR}\] o [\type{+R}]: Radical acortado al final (sale del
+        vértice).
+        Se utiliza cuando nos interesea un radical más corto que en el caso anterior,
+        o cuando al final del mismo queremos poner un átomo o grupo de átomos, de
+        manera que no se vean tachados por el radical.
+      \item \[\type{-SR}\] o [\type{-R}]: Radical acortado al principio
+        (no sale del vértice), pero tiene el alcance del radical \type{R} al final.
+        Se utiliza cuando se desea un radical largo, que no requiera un átomo al
+        final, pero que en el vértice aparezca un átomo.
+      \item \[\type{SR}\]: Radical acortado al principio y al final,
+        (no sale del vértice), pero es más corto que el anterior. Se utiliza cuando
+        queremos poner un átomo en el vértice de la estructura y nos interesa un
+        radical corto al final, o bien queremos poner otro átomo al final.
+      \stopitemize
+    \stopsubsection
+    
+    % ****************************************************************************
+    \startsubsection[title={Fórmula mixta del metilciclohexano}]
+    
+      % --------------------------------------------------------------------------
+      % Metilciclohexano (fórmula mixta)
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4200,left=1900,top=1200,bottom=1500]
+          \bottext{metilciclohexano}
+          \chemical[SIX,B,+SR1,RZ1][CH_3]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{metilciclohexano}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[SIX,B,+SR1,RZ1]{CH_3}
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      % ****************************************************************************
+    
+      % --------------------------------------------------------------------------
+      % 1,2-dimetil-ciclohexano
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,left=1500,top=1200,bottom=1700]
+          \bottext{1,2-dimetilclohexano}
+          \chemical[SIX,B,+SR12,RZ12][CH_3,CH_3]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \bottext{1,2-dimetilciclohexano}
+          \setupchemical[width=4000,left=1500,top=1200,bottom=1700]
+          \chemical[SIX,B,+SR12,RZ12][CH_3,CH_3]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+
+    \stopsubsection
+    
+%      % --------------------------------------------------------------------------
+%      % Ciclohexano bote
+%      % --------------------------------------------------------------------------
+%      % Definición de buffer
+%      % Para imagen
+%      \startbuffer[molecula]
+%        \startchemical[frame=on,width=4000,top=1200,bottom=1600]
+%          \bottext{Ciclohexano (bote)}
+%          \chemical[BOAT,BB]
+%        \stopchemical
+%      \stopbuffer
+%      % Para código fuente
+%      \startbuffer[moleculatxt]
+%        \startchemical
+%          \uptext{(bote)}
+%          \bottext{ciclohexano (bote)}
+%          \setupchemical[width=4000,top=1200,bottom=1600]
+%          \chemical[BOAT,BB]
+%        \stopchemical
+%      \stopbuffer
+%      % .........................................................................
+%      % Definimos una estructura que alinee los centros
+%      \startlinealignment[left]
+%        \framed[frame=off,location=middle]{
+%          \getbuffer[molecula]}
+%      \hskip 0.5em % Espacio entre fórmula y código
+%      \framed[frame=off,location=middle,align=right]
+%             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+%      \stoplinealignment
+%
+%      % --------------------------------------------------------------------------
+%      % Ciclohexano silla
+%      % --------------------------------------------------------------------------
+%      % Definición de buffer
+%      % Para imagen
+%      \startbuffer[molecula]
+%        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+%          \bottext{ciclohexano (silla)}
+%          \chemical[CHAIR,BB]
+%        \stopchemical
+%      \stopbuffer
+%      % Para código fuente
+%      \startbuffer[moleculatxt]
+%        \startchemical
+%          \uptext{(bote)}
+%          \bottext{ciclohexano (silla)}
+%          \setupchemical[width=4000,top=1200,bottom=1500]
+%          \chemical[CHAIR,BB]
+%        \stopchemical
+%      \stopbuffer
+%      % .........................................................................
+%      % Definimos una estructura que alinee los centros
+%      \startlinealignment[left]
+%        \framed[frame=off,location=middle]{
+%          \getbuffer[molecula]}
+%        \hskip 0.5em % Espacio entre fórmula y código
+%        \framed[frame=off,location=middle,align=right]
+%               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+%      \stoplinealignment
+%
+%    \stopsubsection
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title={Estructura con átomo central}]
+    Para empezar, utilizaremos aquí la estructura \type{ONE}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo asociado a la estructura \type{ONE}
+ 
+    % --------------------------------------------------------------------------
+    % ONE
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1800]
+        \bottext{ONE}
+        \chemical[ONE,SB,Z0,Z][A,1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{ONE}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[ONE,SB,Z0,Z][A,1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+    Vemos que el átomo central se numera con cero \type{Z0}. Los átomos unidos
+    a este se numeran del uno al ocho \type{Z1...Z8}.
+  \stopsubsection
+
+  % ****************************************************************************
+  \startsubsection[title={Fórmula desarrollada del metano}]
+    
+    % --------------------------------------------------------------------------
+    % Metilciclohexano (fórmula mixta)
+    % --------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4200,left=1900,top=1300,bottom=1800]
+        \bottext{metano}
+        \chemical[ONE,SR1357,Z0,Z1357][C,H,H,H,H]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{metano}
+        \setupchemical[width=4000,top=1300,bottom=1800]
+        \chemical[ONE,SR1357,Z0,Z1357]{C,H,H,H,H}
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+           \stoplinealignment
+  % ***************************************************************************
+           
+      Nótese \type{SR} que acorta los enlaces al principio y al final.   
+    \stopsubsection
+  \stopsection
+  
+  % ##############################################################################
+  \startsection[title=Estructura tiangular]
+    Para empezar, utilizaremos aquí la estructura \type{THREE}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{THREE}
+ 
+    % --------------------------------------------------------------------------
+    % THREE
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1800]
+        \bottext{THREE}
+        \chemical[THREE,SB,Z][1,2,3]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{THREE}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[THREE,SB,Z][1,2,3]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura cuadrangular]
+    Para empezar, utilizaremos aquí la estructura \type{FOUR}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{FOUR}
+ 
+    % --------------------------------------------------------------------------
+    % FOUR
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+        \bottext{FOUR}
+        \chemical[FOUR,SB,Z][1,2,3,4]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{FOUR}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[FOUR,SB,Z][1,2,3,4]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+  \stopsection
+  
+  % ##############################################################################
+  \startsection[title=Estructura pentagonal]
+    Para empezar, utilizaremos aquí la estructura \type{FIVE}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{FIVE}
+ 
+    % --------------------------------------------------------------------------
+    % FIVE
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1700]
+        \bottext{FIVE}
+        \chemical[FIVE,SB,Z][1,2,3,4,5]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{FIVE}
+        \setupchemical[width=4000,top=1100,bottom=1700]
+        \chemical[FIVE,SB,Z][1,2,3,4,5]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+    \startsubsection[title=ciclopentano]
+    % --------------------------------------------------------------------------
+    % Ciclopentano (fórmula esquemática)
+    % --------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagenn
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1300]
+        \bottext{ciclopentano}
+        \chemical[FIVE,B]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{ciclopentano}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[FIVE,B]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+   \stopsubsection
+
+   \startsubsection[title={\emph{Tetrahidrofurano}, oxolano u oxaciclopentano}]
+    % --------------------------------------------------------------------------
+    % Oxolano (fórmula esquemática)
+    % --------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagenn
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+        \bottext{\emph{tetrahidrofurano}}
+        \chemical[FIVE,B451,+SB2,-SB3,Z3][O]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{oxolano}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[FIVE,B451,+SB2,-SB3,Z3][O]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+  % ---------------------------------------------------------------------------
+  \stopsubsection
+
+  \startsubsection[title=3-metiloxolano]
+    % --------------------------------------------------------------------------
+    % 3-metiloxolano (fórmula esquemática)
+    % --------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagenn
+    \startbuffer[molecula]
+      \startchemical[frame=on,left=2000,width=4500,top=1200,bottom=1500]
+        \bottext{3-metiloxolano}
+        \chemical[FIVE,B145,+SB2,-SB3,Z3,+SR1,RZ1][O,CH_3]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{3-metiloxolano}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[FIVE,B145,+SB2,-SB3,Z3,RZ1][O,CH_3]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+  % ---------------------------------------------------------------------------
+  \stopsubsection
+\stopsection
+
+% ##############################################################################
+\startsection[title=Estructura heptagonal]
+  Para empezar, utilizaremos aquí la estructura \type{SEVEN}, que utiliza como
+  base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+  asociado a un número.
+  
+  Numeración de cada átomo del pentágono asociado a la estructura \type{SEVEN}
+ 
+  % --------------------------------------------------------------------------
+  % SEVEN
+  % ---------------------------------------------------------------------------    
+  % Definición de buffer
+  % Para imagen
+  \startbuffer[molecula]
+    \startchemical[frame=on,width=4000,top=1200,bottom=1800]
+      \bottext{SEVEN}
+      \chemical[SEVEN,SB,Z][1,2,3,4,5,6,7]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{SEVEN}
+        \setupchemical[width=4000,top=1200,bottom=1500]
+        \chemical[SEVEN,SB,Z][1,2,3,4,5,6,7]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura octogonal]
+    Para empezar, utilizaremos aquí la estructura \type{EIGHT}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{EIGHT}
+ 
+    % --------------------------------------------------------------------------
+    % EIGHT
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=2000]
+        \bottext{EIGHT}
+        \chemical[EIGHT,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{EIGHT}
+        \setupchemical[width=4000,top=1200,bottom=2000]
+        \chemical[EIGHT,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura nonagonal]
+    Para empezar, utilizaremos aquí la estructura \type{NINE}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{NINE}
+ 
+    % --------------------------------------------------------------------------
+    % NINE
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=2100]
+        \bottext{NINE}
+        \chemical[NINE,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{NINE}
+        \setupchemical[width=4000,top=1200,bottom=2100]
+        \chemical[NINE,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura nonagonal]
+    Para empezar, utilizaremos aquí la estructura \type{NINE}, que utiliza como
+    base un grupo de seis átomos formando un hexágono regular. Cada átomo está
+    asociado a un número.
+  
+    Numeración de cada átomo del pentágono asociado a la estructura \type{NINE}
+ 
+    % --------------------------------------------------------------------------
+    % NINE
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=4000,top=1200,bottom=2100]
+        \bottext{NINE}
+        \chemical[NINE,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{NINE}
+        \setupchemical[width=4000,top=1200,bottom=2100]
+        \chemical[NINE,SB,Z][1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura hexagonal silla]
+    Para empezar, utilizaremos aquí la estructura \type{CHAIR}, que utiliza como
+    base un grupo de seis átomos. Cada átomo está asociado a un número.
+    Hay dos tipos de enlace, numéricos y alfabéticos.
+  
+    Numeración de cada átomo ciclo asociado a la estructura \type{CHAIR}
+ 
+    % --------------------------------------------------------------------------
+    % CHAIR
+    % ---------------------------------------------------------------------------    
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=5000,top=1800,bottom=2200]
+        \bottext{CHAIR}
+        \chemical[CHAIR,B,+LSR,+RSR,+LRZ,+RRZ][a,b,c,d,e,f,1,2,3,4,5,6]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{CHAIR}
+        \setupchemical[width=5000,top=1800,bottom=2200]
+        \chemical
+          [CHAIR,B,+LSR,+RSR,+LRZ,+RRZ]
+          [a,b,c,d,e,f,1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+    
+    \startsubsection[title={Ciclohexano (silla)}]
+      % --------------------------------------------------------------------------
+      % Ciclohexano silla
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+          \bottext{ciclohexano (silla)}
+          \chemical[CHAIR,B]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \uptext{(bote)}
+          \bottext{ciclohexano (silla)}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[CHAIR,B]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+
+      % --------------------------------------------------------------------------
+      % Ciclohexano silla
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+          \bottext{ciclohexano (silla)}
+          \chemical[CHAIR,BB]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \uptext{(bote)}
+          \bottext{ciclohexano (silla)}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[CHAIR,BB]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      
+    \stopsubsection
+
+  \stopsection
+
+  % ##############################################################################
+  \startsection[title=Estructura hexagonal bote]
+    La estructura hexagonal bote utiliza como base un grupo de seis átomos. Cada
+    átomo está asociado a un número.
+    Hay dos tipos de enlace, numéricos y alfabéticos.
+  
+    Numeración de cada átomo ciclo asociado a la estructura \type{BOAT}
+ 
+    % --------------------------------------------------------------------------
+    % BOAT
+    %---------------------------------------------------------------------------
+    % Definición de buffer
+    % Para imagen
+    \startbuffer[molecula]
+      \startchemical[frame=on,width=5000,top=1800,bottom=2200]
+        \bottext{BOAT}
+        \chemical[BOAT,B,+LSR,+RSR,+LRZ,+RRZ][a,b,c,d,e,f,1,2,3,4,5,6]
+      \stopchemical
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[moleculatxt]
+      \startchemical
+        \bottext{BOAT}
+        \setupchemical[width=5000,top=1800,bottom=2200]
+        \chemical
+          [BOAT,B,+LSR,+RSR,+LRZ,+RRZ]
+          [a,b,c,d,e,f,1,2,3,4,5,6,7,8]
+      \stopchemical
+    \stopbuffer
+    % .........................................................................
+    % Definimos una estructura que alinee los centros
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{
+        \getbuffer[molecula]}
+      \hskip 0.5em % Espacio entre fórmula y código
+      \framed[frame=off,location=middle,align=right]
+             {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+    \stoplinealignment
+    % ---------------------------------------------------------------------------
+    
+    \startsubsection[title={Ciclohexano (bote)}]
+      % --------------------------------------------------------------------------
+      % Ciclohexano bote
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+          \bottext{ciclohexano (bote)}
+          \chemical[BOAT,B]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \uptext{(bote)}
+          \bottext{ciclohexano (bote)}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[BOAT,B]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+
+      % --------------------------------------------------------------------------
+      % Ciclohexano bote
+      % --------------------------------------------------------------------------
+      % Definición de buffer
+      % Para imagen
+      \startbuffer[molecula]
+        \startchemical[frame=on,width=4000,top=1200,bottom=1500]
+          \bottext{ciclohexano (bote)}
+          \chemical[BOAT,BB]
+        \stopchemical
+      \stopbuffer
+      % Para código fuente
+      \startbuffer[moleculatxt]
+        \startchemical
+          \uptext{(bote)}
+          \bottext{ciclohexano (bote)}
+          \setupchemical[width=4000,top=1200,bottom=1500]
+          \chemical[BOAT,BB]
+        \stopchemical
+      \stopbuffer
+      % .........................................................................
+      % Definimos una estructura que alinee los centros
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \getbuffer[molecula]}
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]
+               {\switchtobodyfont[8.0pt]\typebuffer[moleculatxt]}
+      \stoplinealignment
+      
+    \stopsubsection
+
+  \stopsection
+
+  
+\stopchapter
+
+\stopcomponent
+
+
+
+  
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "../ctx-ppchtextut.tex"
+%%% End:

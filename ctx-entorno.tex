@@ -1,0 +1,72 @@
+\startenvironment ctx-entorno
+\project ppchtextut
+
+% Tamaño de papel A4
+\setuppapersize[A4]
+
+% Tipo de letra y tamaño por defecto
+\setupbodyfont[libertinus, 11pt]
+
+% Idioma español
+\mainlanguage[es]
+
+% Indentación de la primera línea de cada párrafo, incluida el primer párrafo
+% después de un título
+\setupindenting[yes, medium, first]
+
+% Espaciado entre líneas de texto
+%\setupinterlinespace[medium]
+%\setupinterlinespace[1.1\bodyfontsize]
+
+% Espaciado entre párrafos
+\setupwhitespace[medium]
+
+% Numeración de páginas
+\setuppagenumbering[location={footer, middle}]
+
+% Activar colores
+\setupcolors[state=start]
+
+% Portada
+\definelayout[portada][topspace=0cm]
+\definelayout[paginablanca][topspace=-8cm]
+
+% Imágenes
+\setupexternalfigure[order={svg,pdf,png,jpg}]
+
+% Referencia a figuras o tablas que incluya el número del capítulo
+\setupcaptions[way=bychapter, prefixsegments=chapter]
+
+% Texto literal en tamaño de la fuente.
+% En caso contrario los caracteres son más grandes 'big'.
+%\setuptype[style=\switchtobodyfont[normal]]
+\setuptype[style=\tt\tenpoint]
+
+\definetabulate[TresCols][|p|p|p|]
+
+% Tengo que explicar qué hace esto
+\definemixedcolumns
+  [Mycolumns]
+  [
+    n=1,
+    balance=,
+    grid=strut,
+  ]
+
+\setupalign[verytolerant,stretch,hanging]
+
+% Fórmulas químicas
+\setupchemical[scale=small,axis=off,frame=off]
+
+\stopenvironment
+% ----------------------------------------------------------------------
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "ctx-ppchtextut.tex"
+%%% End:
+
