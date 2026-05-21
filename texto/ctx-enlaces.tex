@@ -21,8 +21,8 @@
         % Columna 1: Estructura 1
         \NC
         \startchemical[frame=off,left=1800,width=3600,top=1900,bottom=2200]
-          \chemical[SIX,B,+SR]
-          \bottext{[SIX,B,+SR]}
+          \chemical[SIX,B,R]
+          \bottext{[SIX,B,R]}
         \stopchemical
         % Columna 2: Estructura 2
         \NC
@@ -46,34 +46,41 @@
     \stopformula
 
     \startitemize[n, packed, joinedup]
-    \item El ejemplo de la izquierda muestra una estructura hexagonal [\type{SIX}],
-      con todos los enlaces de vértice a vértice [\type{B}]. Los radicales son
-      enlaces sencillos que salen de los vértices y están acortados [\type{+SR}],
-      ---recordemos que es el signo (\type{+}) el que acorta el radical al final---.
-      Por último, al final de los radicales acortados situamos los \emph{átomos},
-      con [\type{RZ}], en este caso números, para recordar la numeración en esta
-      estructura. Todos los enlaces son sencillos.
-    \item En el siguiente ejemplo seguimos con enlaces sencillos, pero ahora dejamos
-      espacio, tanto para los átomos al final de los radicales, como para los átomos
-      en los vértices de la estructura, con [\type{SR}], lo que acorta tanto el
-      principio como el final del radical.
-    \item En el tercer ejemplo nos aparecen enlaces dobles [\type{DB246}] entre los
-      átomos 23, 45 y 61, debido a la numeración 246 que acompaña.
+    \item La primera fórmula empezando por la izquierda muestra una estructura
+      hexagonal [\type{SIX}], con todos los enlaces de vértice a vértice con
+      [\type{B}].
+      Los radicales son enlaces sencillos que salen de los vértices y no están
+      acortados ni al principio ni al final, y se representan con el código
+      [\type{R}], de manera que nos se pueden insertar átomos ni en el anillo
+      ni al final del radical.
+    \item En segundo lugar tenemos la misma situación de enlaces simples, pero ahora
+      se deja espacio tanto para los átomos de la estructura hexagonal, como para
+      los que se enlazan a ellos. Esto se consigue acortando el principio y final de
+      los enlaces entre los vertices mediante \type{SB}, y acortando también el
+      principio y el final de los radicales con \type{SR}.
+    \item En tercer lugar se deja también espacio para todos los átomos, tanto de la
+      estructura hexagonal, como para los que se enlazan a ellos. La diferencia es
+      que ahora hay enlaces sencillos y dobles. Los enlaces sencillos en la
+      estructura se forman con \type{SB}, como en el ejemplo anterior, y los
+      enlaces dobles con \type{DB}. Los enlaces sencillos en la estructura se
+      encuentran entre los átomos 12, 34 y 56; así al código se le añaden los
+      primeros números \type{SB135}. Los enlaces dobles en la estructura
+      se encuentran entre los átomos 23, 45 y 61; esto se expresa como \type{DB246}.
+      Todos los radicales se representan con \type{SR} para dejar espacio, tanto a
+      los átomos de la estructura, como para los que se enlazan a ellos.
+    \item En último lugar, seguimos dejando espacio para todos los átomos, tenemos
+      también enlaces sencillos y dobles en la estructura, aunque ahora hay cuatro
+      enlaces sencillos entre los átomos 12, 34, 56 y 61, mediante \type{SB1356}
+      y dos enlaces dobles entre los átomos 23 y 45, con \type{DB24}. La diferencia
+      está en que ahora hay un radical con enlace doble en el átomo 6, que se
+      especifica mediante \type{DR6} y cinco enlaces sencillos en el resto de
+      átomos, \type{SR1..5}, donde los dos puntos indican 12345, sin comas entre
+      los números.
     \stopitemize
 
-    De los tres ejemplos, infiero que [\type{SR}] dibuja radicales como enlaces
-    simples entre átomos de la estructura y los que se unen a ellos, {\bf dejando
-      espacio para la representación de los átomos}. De la misma forma,
-    [\type{DB}] hace los mismo, {\bf pero ahora los enlaces son dobles}.
-    Se ve claramente que (\type{S}) significa enlace sencillo y (\type{D}) es
-    enlace doble.
-
-
-    \startchemical[frame=off,left=2500,width=5000,top=1900,bottom=2500]
-      \chemical[SIX,+DB246,+SB135,+DR,RZ][1,2,3,4,5,6]
-      \bottext{[SIX,B,+DR,RZ] [1..6]}
-    \stopchemical
-
+    \startsubsection[title=Ejemplos]
+      
+    \stopsubsection
     
   \stopsection
 

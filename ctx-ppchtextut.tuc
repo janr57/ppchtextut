@@ -358,6 +358,14 @@ utilitydata.structures.sections.collected={
   ["separatorset"]="default",
   ["set"]="all",
  },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=31,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -392,8 +400,8 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize"]={
-  { 0, 0, 2, 2, 1, 1, 3, 1, 1, 3, 4, 0, 0, 3, 2 },
-  { 0, 10, 0, 10, 0, 10, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 2 },
+  { 0, 0, 2, 2, 1, 1, 3, 1, 1, 3, 4, 0, 0, 4, 2 },
+  { 0, 10, 0, 10, 0, 10, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 2 },
  },
  ["itemgroup:itemize:note"]={
   { 0, 0, 0, 0, 0 },
@@ -432,8 +440,8 @@ if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
 
 utilitydata.structures.lists.collected={
  {
-  ["metadata"]=31,
-  ["numberdata"]=32,
+  ["metadata"]=32,
+  ["numberdata"]=33,
   ["references"]={
    ["block"]="frontpart",
    ["internal"]=1,
@@ -447,8 +455,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=31,
-  ["numberdata"]=33,
+  ["metadata"]=32,
+  ["numberdata"]=34,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=2,
@@ -463,8 +471,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=35,
+  ["metadata"]=35,
+  ["numberdata"]=36,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=3,
@@ -479,8 +487,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=37,
+  ["metadata"]=37,
+  ["numberdata"]=38,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=4,
@@ -495,8 +503,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=38,
+  ["metadata"]=37,
+  ["numberdata"]=39,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=5,
@@ -511,8 +519,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=39,
+  ["metadata"]=35,
+  ["numberdata"]=40,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=6,
@@ -527,8 +535,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=31,
-  ["numberdata"]=40,
+  ["metadata"]=32,
+  ["numberdata"]=41,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=7,
@@ -543,8 +551,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=41,
+  ["metadata"]=35,
+  ["numberdata"]=42,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=8,
@@ -559,8 +567,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=42,
+  ["metadata"]=37,
+  ["numberdata"]=43,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=9,
@@ -575,8 +583,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=43,
+  ["metadata"]=37,
+  ["numberdata"]=44,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=10,
@@ -591,8 +599,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=44,
+  ["metadata"]=37,
+  ["numberdata"]=45,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=11,
@@ -607,8 +615,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=45,
+  ["metadata"]=37,
+  ["numberdata"]=46,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=12,
@@ -623,8 +631,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=46,
+  ["metadata"]=35,
+  ["numberdata"]=47,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=13,
@@ -639,8 +647,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=47,
+  ["metadata"]=37,
+  ["numberdata"]=48,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=14,
@@ -655,8 +663,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=48,
+  ["metadata"]=35,
+  ["numberdata"]=49,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=15,
@@ -671,8 +679,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=49,
+  ["metadata"]=35,
+  ["numberdata"]=50,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=16,
@@ -687,8 +695,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=50,
+  ["metadata"]=35,
+  ["numberdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=17,
@@ -703,8 +711,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=51,
+  ["metadata"]=37,
+  ["numberdata"]=52,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=18,
@@ -719,8 +727,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=52,
+  ["metadata"]=37,
+  ["numberdata"]=53,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=19,
@@ -735,8 +743,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=53,
+  ["metadata"]=37,
+  ["numberdata"]=54,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=20,
@@ -751,8 +759,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=54,
+  ["metadata"]=35,
+  ["numberdata"]=55,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=21,
@@ -767,8 +775,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=55,
+  ["metadata"]=35,
+  ["numberdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=22,
@@ -783,8 +791,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=56,
+  ["metadata"]=35,
+  ["numberdata"]=57,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=23,
@@ -799,8 +807,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=57,
+  ["metadata"]=35,
+  ["numberdata"]=58,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=24,
@@ -815,8 +823,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=58,
+  ["metadata"]=35,
+  ["numberdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=25,
@@ -831,8 +839,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=59,
+  ["metadata"]=37,
+  ["numberdata"]=60,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=26,
@@ -847,8 +855,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=60,
+  ["metadata"]=35,
+  ["numberdata"]=61,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=27,
@@ -863,8 +871,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=36,
-  ["numberdata"]=61,
+  ["metadata"]=37,
+  ["numberdata"]=62,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=28,
@@ -879,8 +887,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=31,
-  ["numberdata"]=62,
+  ["metadata"]=32,
+  ["numberdata"]=63,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=29,
@@ -895,8 +903,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=63,
+  ["metadata"]=35,
+  ["numberdata"]=64,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=30,
@@ -911,14 +919,30 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=34,
-  ["numberdata"]=64,
+  ["metadata"]=37,
+  ["numberdata"]=65,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=31,
    ["prefix"]="ctx-enlaces",
    ["realpage"]=16,
    ["section"]=31,
+   ["structure"]=7,
+  },
+  ["titledata"]={
+   ["label"]="subsection",
+   ["title"]="Ejemplos",
+  },
+ },
+ {
+  ["metadata"]=35,
+  ["numberdata"]=66,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=32,
+   ["prefix"]="ctx-enlaces",
+   ["realpage"]=17,
+   ["section"]=32,
    ["structure"]=7,
   },
   ["titledata"]={
@@ -935,120 +959,120 @@ utilitydata.structures.pages.collected={
  {
   ["block"]="frontpart",
   ["number"]=1,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="stop",
  },
  {
   ["block"]="frontpart",
   ["number"]=1,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="stop",
  },
  {
   ["block"]="frontpart",
   ["number"]=1,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=2,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=3,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=4,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=5,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=6,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=7,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=8,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=9,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=10,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=11,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=12,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=13,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=14,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=15,
-  ["numberdata"]=65,
-  ["prefixdata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
   ["state"]="start",
  },
 }
@@ -1100,7 +1124,7 @@ utilitydata.structures.itemgroups.collected={
    { 4, 0 },
   },
   {
-   { 3, 0 },
+   { 4, 0 },
   },
   {
    { 2, 0 },
@@ -1193,6 +1217,7 @@ utilitydata.job.packed={
   { 0, 2, 11, 1 },
   { 0, 3 },
   { 0, 3, 1 },
+  { 0, 3, 1, 1 },
   { 0, 3, 2 },
   {
    ["catcodes"]=9,
@@ -1464,6 +1489,14 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["language"]="es",
    ["numbers"]=30,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=31,
    ["separatorset"]="default",
    ["set"]="all",
   },
