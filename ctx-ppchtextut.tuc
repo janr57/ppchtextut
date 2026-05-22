@@ -419,10 +419,10 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["realpage"]={
-  { 17 },
+  { 18 },
  },
  ["subpage"]={
-  { 17 },
+  { 18 },
  },
  ["table"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -431,7 +431,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["userpage"]={
-  { 15 },
+  { 16 },
  },
 }
 
@@ -925,7 +925,7 @@ utilitydata.structures.lists.collected={
    ["block"]="bodypart",
    ["internal"]=31,
    ["prefix"]="ctx-enlaces",
-   ["realpage"]=16,
+   ["realpage"]=17,
    ["section"]=31,
    ["structure"]=7,
   },
@@ -1071,6 +1071,13 @@ utilitydata.structures.pages.collected={
  {
   ["block"]="bodypart",
   ["number"]=15,
+  ["numberdata"]=67,
+  ["prefixdata"]=68,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=16,
   ["numberdata"]=67,
   ["prefixdata"]=68,
   ["state"]="start",
