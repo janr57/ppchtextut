@@ -79,21 +79,22 @@
     \stopitemize
 
     \startsubsection[title=Ejemplos]
-
-    % Definimos una estructura que alinee los centros
-    \startlinealignment[left]
-      \framed[frame=off,location=middle]{
-        \startchemical[frame=off,left=1800,width=3600,top=1900,bottom=2200]
-          \chemical[SIX,B,R]
-        \stopchemical
-      }
-      \hskip 0.5em % Espacio entre fórmula y código
-      \framed[frame=off,location=middle,align=right]{
-        \startppchtexcode
-          \chemical[SIX,B,R]
-        \stopppchtexcode
-      }
-    \stoplinealignment
+     
+      % 1,2,3,4,5,6-hexametilciclohexano
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{
+          \startchemical[frame=off,left=1800,width=3600,top=1900,bottom=2400]
+            \chemical[SIX,B,R]
+            \bottext{[SIX,B,R]}
+          \stopchemical
+        }
+        \hskip 0.5em % Espacio entre fórmula y código
+        \framed[frame=off,location=middle,align=right]{
+          \startppchtexcode
+            1,2,3,4,5,6-hexametilciclohexano
+          \stopppchtexcode
+        }
+      \stoplinealignment
 
     \stopsubsection
     
@@ -166,16 +167,17 @@
       \stopitemize
     \stopitemize
 
-%    \startchemical
-%      \chemical[SIX,B,ZN] [C,C,C,C,C,C]
-%    \stopchemical
+    
+    \startchemical
+      \chemical[SIX,HB,ZN] [C,C,C,C,C,C]
+    \stopchemical
 %
 %    \startchemical
 %      \chemical[SIX,B,ZT] [1,2,3,4,5,6]
 %    \stopchemical
     
     \startppchtexcode
-      \chemical[FIVE,B,R,RZ]
+      \chemical[FIVE,HB,R,RZ]
     \stopppchtexcode
     
   \stopsection
